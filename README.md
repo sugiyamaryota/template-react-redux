@@ -35,3 +35,10 @@ https://github.com/mrsteele/dotenv-webpack/issues/377
 webpackの構成を以下で検討
 
 https://webpack.js.org/guides/production/
+
+## TypeScriptについて
+
+以下のエラーが発生しました。
+`Property 'userInfo' does not exist on type 'IntrinsicAttributes`
+`Prop does not exist on type 'PropsWithChildren...'`
+presenter側で、propsを定義した場合、型情報と一致する必要があります。例えば、logic側で定義したstateを渡してしまうと、上記のエラーが発生します。型で定義した粒度でpropsも定義する必要があります。
