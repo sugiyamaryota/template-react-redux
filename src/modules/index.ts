@@ -1,7 +1,7 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit'
-import loginModules from './loginModules'
+import userModules from './userModules'
 export const reducers = {
-    loginModules: loginModules.reducer,
+    userModules: userModules.reducer,
 }
 export const store = configureStore({
     reducer: combineReducers(reducers),

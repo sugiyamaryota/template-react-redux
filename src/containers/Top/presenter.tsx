@@ -1,13 +1,13 @@
-import React, { useMemo } from 'react'
+import React from 'react'
+import { UserType } from 'modules/userModules'
 
-interface PresenterProps {
-    loggedIn?: boolean
-}
-
-export const Presenter: React.FC<PresenterProps> = ({}) => {
+export const Presenter: React.FC<UserType> = ({ avatar_url, name, url }) => {
     return (
         <div>
-            TOP
+            TOP<br/>
+            {avatar_url}<br/>
+            {name}<br/>
+            {url}
         </div>
     )
 }
