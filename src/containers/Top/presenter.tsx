@@ -1,5 +1,6 @@
 import React from 'react'
 import { UserType } from 'modules/userModules'
+import { LinkButton, Button } from 'components/Button'
 
 export const Presenter: React.FC<UserType> = ({ avatar_url, name, url }) => {
     return (
@@ -7,7 +8,9 @@ export const Presenter: React.FC<UserType> = ({ avatar_url, name, url }) => {
             TOP<br/>
             {avatar_url}<br/>
             {name}<br/>
-            {url}
+            {url}<br/>
+            <LinkButton path={'/'} />
+            <Button onClick={()=>{console.log('ok')}} />
         </div>
     )
 }

@@ -42,3 +42,11 @@ https://webpack.js.org/guides/production/
 `Property 'userInfo' does not exist on type 'IntrinsicAttributes`
 `Prop does not exist on type 'PropsWithChildren...'`
 presenter側で、propsを定義した場合、型情報と一致する必要があります。例えば、logic側で定義したstateを渡してしまうと、上記のエラーが発生します。型で定義した粒度でpropsも定義する必要があります。
+
+## historyについて
+
+https://github.com/supasate/connected-react-router/issues/312#issuecomment-647082777
+## Jestについて
+
+https://jestjs.io/ja/docs/tutorial-react#create-react-app%E3%82%92%E4%BD%BF%E3%82%8F%E3%81%AA%E3%81%84%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97
+
