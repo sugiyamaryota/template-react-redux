@@ -1,4 +1,4 @@
-import useRequest from 'hook/useRequest'
+import useRequest from 'hooks/useRequest'
 
 const {request, noAuthRequest} = useRequest()
 

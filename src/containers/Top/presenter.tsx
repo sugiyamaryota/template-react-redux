@@ -9,7 +9,7 @@ export const Presenter: React.FC<UserType> = ({ avatar_url, name, url }) => {
             {avatar_url}<br/>
             {name}<br/>
             {url}<br/>
-            <LinkButton path={'/'} />
+            <LinkButton page={'/'}>test</LinkButton>
             <Button onClick={()=>{console.log('ok')}} />
         </div>
     )

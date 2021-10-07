@@ -1,14 +1,15 @@
-import React, { FC } from 'react'
+import React, { FC, ReactChild } from 'react'
 import { Link } from 'react-router-dom'
 
 interface Props {
-    path: string
+    page: string
+    children: ReactChild
 }
 
-export const LinkButton: FC<Props> = ({ path }) => {
+export const LinkButton: FC<Props> = ({ page, children }) => {
     return (
-        <Link to={path}>
-            button
+        <Link to={page}>
+            {children}
         </Link>
     )
 }
