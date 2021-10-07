@@ -54,6 +54,9 @@ https://jestjs.io/ja/docs/tutorial-react#create-react-app%E3%82%92%E4%BD%BF%E3%8
 
 https://media-massage.net/blog/ts-jest%E3%81%8C%E5%A4%96%E9%83%A8%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%82%92import%E3%81%A7%E3%81%8D%E3%81%AA%E3%81%84%E5%A0%B4%E5%90%88%E3%81%AE%E5%AF%BE%E5%87%A6%E6%96%B9/
 
+jest.config.jsのtransformで指定した拡張子でなかったので、importを使用していた場合にエラーが発生していた。
+テスト用のファイルをtsにするとそのエラーは解決した。
+
 testファイルではmoduleをimportする際、相対パス指定でないと、以下のエラーが出る。
 ```
 Cannot find module 'hoge' from 'src/__test__/hoge.test.ts'
