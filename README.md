@@ -141,3 +141,12 @@ https://stackoverflow.com/questions/68878189/eslint-definition-for-rule-import-e
 ```
 Definition for rule 'jsx-a11y/label-has-associated-control' was not found  jsx-a11y/label-has-associated-control
 ```
+
+router を使用している components を stories に追加すると、以下のエラーが出ました。
+
+```
+"Error: Invariant failed: You should not use <Link> outside a <Router>"
+```
+
+https://github.com/storybookjs/storybook/issues/8892
+https://qiita.com/daikiojm/items/da3299d7b90d38194d85
