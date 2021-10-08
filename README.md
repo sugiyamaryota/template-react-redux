@@ -150,3 +150,7 @@ router を使用している components を stories に追加すると、以下�
 
 https://github.com/storybookjs/storybook/issues/8892
 https://qiita.com/daikiojm/items/da3299d7b90d38194d85
+
+storiesOf と CSF の記述の差が分かりませんでした。下記を参考にしました。
+
+https://awesome-linus.com/2020/03/03/change-storybook-to-csf/
