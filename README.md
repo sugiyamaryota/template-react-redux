@@ -55,6 +55,9 @@ yarn add -D react-refresh @pmmmwh/react-refresh-webpack-plugin
 
 # jest
 yarn add -D jest ts-jest react-test-renderer @types/jest @types/react-test-renderer babel-jest
+
+# huskyrc・lint-staged
+yarn add -D husky lint-stage
 ```
 
 # Issue
