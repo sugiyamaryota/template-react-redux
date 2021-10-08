@@ -1,7 +1,7 @@
 import React, { FC, ReactChild } from 'react'
 import { Link } from 'react-router-dom'
 
-interface Props {
+export interface Props {
   page: string
   children: ReactChild
 }

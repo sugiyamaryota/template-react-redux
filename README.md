@@ -118,3 +118,35 @@ Cannot find module 'hoge' from 'src/__test__/hoge.test.ts'
 ```
 
 https://stackoverflow.com/questions/44349403/jest-error-test-suite-failed-to-run-how-to-solve
+
+## storybook
+
+storybook の導入を行ったところ、下記に遭遇しました。
+https://github.com/prettier/eslint-plugin-prettier/issues/253
+
+`eslint-config-prettier`をインストールしたところ、下記に遭遇しました。
+
+```
+Error: "prettier/@typescript-eslint" has been merged into "prettier" in eslint-config-prettier 8.0.0.
+```
+
+`eslintrc.json`の extends で該当の記述を削除しました。
+
+```
+Definition for rule 'import/extensions' was not found
+```
+
+https://stackoverflow.com/questions/68878189/eslint-definition-for-rule-import-extensions-was-not-found
+
+```
+Definition for rule 'jsx-a11y/label-has-associated-control' was not found  jsx-a11y/label-has-associated-control
+```
+
+router を使用している components を stories に追加すると、以下のエラーが出ました。
+
+```
+"Error: Invariant failed: You should not use <Link> outside a <Router>"
+```
+
+https://github.com/storybookjs/storybook/issues/8892
+https://qiita.com/daikiojm/items/da3299d7b90d38194d85

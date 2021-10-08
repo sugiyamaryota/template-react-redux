@@ -1,6 +1,7 @@
 import React from 'react'
 import { UserType } from 'modules/userModules'
-import { LinkButton, Button } from 'components/Button'
+import { Button } from 'components/Button'
+import { LinkButton } from 'components/LinkButton'
 
 export const Presenter: React.FC<UserType> = ({ avatar_url, name, url }) => {
   return (
