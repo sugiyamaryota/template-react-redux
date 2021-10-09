@@ -1,15 +1,22 @@
 import React from 'react'
 import { MemoryRouter } from 'react-router-dom'
-import { Meta, storiesOf } from '@storybook/react'
+import { Meta } from '@storybook/react'
 
 import { LinkButton } from '../'
 
+/**
+ * storiesOf
+ * storiesOfをimportします。
+ */
 // storiesOf('Example/LinkButton', module)
 //   .addDecorator(story => (
 //     <MemoryRouter initialEntries={['/']}>{story()}</MemoryRouter>
 //   ))
 //   .add('LinkButton', () => <LinkButton page={'/'}>test</LinkButton>)
 
+/**
+ * SCF
+ */
 export default {
   title: 'Example/LinkButton',
   decorators: [
@@ -17,4 +24,4 @@ export default {
   ],
 } as Meta
 
-export const showLinkButton = () => <LinkButton page={'/'}>test</LinkButton>
+export const Primary = () => <LinkButton page={'/'}>test</LinkButton>
