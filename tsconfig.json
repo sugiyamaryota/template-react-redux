@@ -2,23 +2,16 @@
   "compilerOptions": {
     "baseUrl": "src",
     "sourceMap": true,
-    "module": "esnext",
-    "target": "es5",
+    "module": "commonjs",
+    "target": "es2020",
     "jsx": "react",
-    "lib": [
-      "es6",
-      "dom"
-    ],
+    "lib": ["es6", "dom"],
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "moduleResolution": "Node",
-    "typeRoots": [
-      "types",
-      "node_modules/@types"
-    ],
-    "outDir": "./dist",
+    "typeRoots": ["types", "node_modules/@types"],
     "incremental": true,
     "removeComments": false,
     "downlevelIteration": true,
@@ -31,22 +24,20 @@
     "strictBindCallApply": false,
     "strictPropertyInitialization": false,
     "noImplicitThis": false,
-    "types": [
-      "jest",
-      "node"
-    ],
+    "types": ["jest", "node"],
     "allowSyntheticDefaultImports": true,
     /**
-    * ToDo:
-    * 一旦 isolatedModulesをfalseにしています
-    */
+     * ToDo:
+     * 一旦 isolatedModulesをfalseにしています
+     */
     "isolatedModules": false,
     "noEmit": true
   },
   "include": [
-    "src/**/*"
+    "./babel.config.js",
+    "./jest.config.js",
+    "./jest.setup.ts",
+    "./src/**/*"
   ],
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": ["node_modules"]
 }
