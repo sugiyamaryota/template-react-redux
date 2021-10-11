@@ -73,6 +73,13 @@ yarn add @babel/core babel-loader @pmmmwh/react-refresh-webpack-plugin -D
 yarn remove react-hot-loader @hot-loader/react-dom
 ```
 
+以下のエラーが発生しました。webpack の devserver の設定で、hot プロパティを true にすると解決しました。
+https://github.com/pmmmwh/react-refresh-webpack-plugin/issues/169#issuecomment-672240627
+
+```
+[ReactRefreshPlugin] Hot Module Replacement (HMR) is not enabled! React Refresh requires HMR to function properly.
+```
+
 ## dotenv-webpack の問題について
 
 https://github.com/mrsteele/dotenv-webpack/issues/377
