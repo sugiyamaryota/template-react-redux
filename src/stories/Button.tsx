@@ -1,7 +1,7 @@
 import React from 'react'
 import './button.css'
 
-interface ButtonProps {
+export interface ButtonProps {
   /**
    * Is this the principal call to action on the page?
    */
@@ -17,7 +17,7 @@ interface ButtonProps {
   /**
    * Button contents
    */
-  label: string
+  children: string
   /**
    * Optional click handler
    */
@@ -31,7 +31,7 @@ export const Button = ({
   primary = false,
   size = 'medium',
   backgroundColor,
-  label,
+  children,
   ...props
 }: ButtonProps) => {
   const mode = primary
@@ -46,7 +46,7 @@ export const Button = ({
       style={{ backgroundColor }}
       {...props}
     >
-      {label}
+      {children}
     </button>
   )
 }

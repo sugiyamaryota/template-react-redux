@@ -73,6 +73,13 @@ yarn add @babel/core babel-loader @pmmmwh/react-refresh-webpack-plugin -D
 yarn remove react-hot-loader @hot-loader/react-dom
 ```
 
+以下のエラーが発生しました。webpack の devserver の設定で、hot プロパティを true にすると解決しました。
+https://github.com/pmmmwh/react-refresh-webpack-plugin/issues/169#issuecomment-672240627
+
+```
+[ReactRefreshPlugin] Hot Module Replacement (HMR) is not enabled! React Refresh requires HMR to function properly.
+```
+
 ## dotenv-webpack の問題について
 
 https://github.com/mrsteele/dotenv-webpack/issues/377
@@ -101,7 +108,7 @@ https://github.com/supasate/connected-react-router/issues/312#issuecomment-64708
 
 ## Jest について
 
-スナップショットテスト(UI テスト)
+スナップショットテスト(UI テスト)とは。
 
 https://jestjs.io/ja/docs/tutorial-react#create-react-app%E3%82%92%E4%BD%BF%E3%82%8F%E3%81%AA%E3%81%84%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97
 
@@ -150,3 +157,48 @@ router を使用している components を stories に追加すると、以下�
 
 https://github.com/storybookjs/storybook/issues/8892
 https://qiita.com/daikiojm/items/da3299d7b90d38194d85
+
+storiesOf と CSF の記述の差が分かりませんでした。下記を参考にしました。
+
+https://awesome-linus.com/2020/03/03/change-storybook-to-csf/
+
+### storybook と jest
+
+リグレッションテスト（Regression Test）とは。
+動作していた機能に不具合が起きていないか確認するためのテスト
+
+以下のエラーが出ました。mock ファイルの作成と jest.config.js の rootDir から src を除外して、相対パス指定をしなおすと、こちらのエラーは解決しました。
+https://jestjs.io/docs/webpack
+https://github.com/kulshekhar/ts-jest/issues/364#issuecomment-611741215
+
+```
+SyntaxError: Unexpected token '.'
+```
+
+https://jestjs.io/docs/configuration#testenvironment-string
+
+下記エラーが出ました。jsdom の環境で動作させる必要があるので、下記をコメントアウトで追加します。
+
+```
+renders primary button with default args
+
+The error below may be caused by using the wrong test environment, see https://jestjs.io/docs/configuration#testenvironment-string.
+Consider using the "jsdom" test environment.
+```
+
+```
+/**
+ * @jest-environment jsdom
+ */
+```
+
+## babel.config.js
+
+以下のエラーが起きていました。tsconfig の incluede に該当のパスを追加と、.eslintrc の env に node を設定したところ、解決しました。
+
+```
+parsing error parseroptions.project has been set for @typescript-eslint/parser
+```
+
+https://www.jacobparis.com/blog/bug-parser-options
+https://chaika.hatenablog.com/entry/2020/04/13/130000

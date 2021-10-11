@@ -2,7 +2,8 @@
   "root": true,
   "env": {
     "browser": true,
-    "es6": true
+    "es6": true,
+    "node": true
   },
   "extends": [
     "eslint:recommended",
@@ -17,12 +18,12 @@
   },
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module",
     "project": "./tsconfig.json",
     "ecmaFeatures": {
       "jsx": true
-    },
-    "ecmaVersion": 2018,
-    "sourceType": "module"
+    }
   },
   "plugins": ["react", "@typescript-eslint", "import"],
   "settings": {
@@ -63,6 +64,9 @@
         "functions": false
       }
     ],
+    /*
+     * ToDo：storybook導入時にエラーが出たので一時的にコメントアウトしています。
+     */
     // "jsx-a11y/label-has-associated-control": [
     //   "error",
     //   {
@@ -95,6 +99,12 @@
       "files": ["**/webpack.*.js"],
       "rules": {
         "import/no-extraneous-dependencies": 0
+      }
+    },
+    {
+      "files": ["**/*.stories.*"],
+      "rules": {
+        "import/no-anonymous-default-export": "off"
       }
     }
   ]
