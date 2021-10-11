@@ -192,6 +192,9 @@ Consider using the "jsdom" test environment.
  */
 ```
 
+以下と同じ事象が発生しました。
+https://javabayashi.hatenablog.com/entry/2020/07/07/170615
+
 ## babel.config.js
 
 以下のエラーが起きていました。tsconfig の incluede に該当のパスを追加と、.eslintrc の env に node を設定したところ、解決しました。
