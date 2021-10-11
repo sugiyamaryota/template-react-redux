@@ -160,6 +160,31 @@ https://awesome-linus.com/2020/03/03/change-storybook-to-csf/
 リグレッションテスト（Regression Test）とは。
 動作していた機能に不具合が起きていないか確認するためのテスト
 
+以下のエラーが出ました。mock ファイルの作成と jest.config.js の rootDir から src を除外して、相対パス指定をしなおすと、こちらのエラーは解決しました。
+https://jestjs.io/docs/webpack
+https://github.com/kulshekhar/ts-jest/issues/364#issuecomment-611741215
+
+```
+SyntaxError: Unexpected token '.'
+```
+
+https://jestjs.io/docs/configuration#testenvironment-string
+
+下記エラーが出ました。jsdom の環境で動作させる必要があるので、下記をコメントアウトで追加します。
+
+```
+renders primary button with default args
+
+The error below may be caused by using the wrong test environment, see https://jestjs.io/docs/configuration#testenvironment-string.
+Consider using the "jsdom" test environment.
+```
+
+```
+/**
+ * @jest-environment jsdom
+ */
+```
+
 ## babel.config.js
 
 以下のエラーが起きていました。tsconfig の incluede に該当のパスを追加と、.eslintrc の env に node を設定したところ、解決しました。

@@ -2,9 +2,9 @@
   "compilerOptions": {
     "baseUrl": "src",
     "sourceMap": true,
-    "module": "commonjs",
+    "module": "esnext",
     "target": "es2020",
-    "jsx": "react",
+    "jsx": "react-jsx",
     "lib": ["es6", "dom"],
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
@@ -26,17 +26,14 @@
     "noImplicitThis": false,
     "types": ["jest", "node"],
     "allowSyntheticDefaultImports": true,
-    /**
-     * ToDo:
-     * 一旦 isolatedModulesをfalseにしています
-     */
-    "isolatedModules": false,
-    "noEmit": true
+    "isolatedModules": true,
+    "noEmit": true,
+    "noFallthroughCasesInSwitch": true
   },
   "include": [
     "./babel.config.js",
     "./jest.config.js",
-    "./jest.setup.ts",
+    //"./jest.setup.ts",
     "./src/**/*"
   ],
   "exclude": ["node_modules"]

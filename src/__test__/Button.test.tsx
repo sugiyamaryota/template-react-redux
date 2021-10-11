@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom
+ */
+
 import React from 'react'
 import { render, screen } from '@testing-library/react'
 import { composeStories } from '@storybook/testing-react'
@@ -7,15 +11,13 @@ import * as stories from '../stories/Button.stories' // import all stories from 
 const { Primary } = composeStories(stories)
 
 test('renders primary button with default args', () => {
-  render(<Primary />)
-  const buttonElement = screen.getByText(
-    /Text coming from args in stories file!/i
-  )
+  render(<Primary>Hello world</Primary>)
+  const buttonElement = screen.queryByText(/Hello world/i)
   expect(buttonElement).not.toBeNull()
 })
 
 test('renders primary button with overriden props', () => {
   render(<Primary>Hello world</Primary>) // you can override props and they will get merged with values from the Story's args
-  const buttonElement = screen.getByText(/Hello world/i)
+  const buttonElement = screen.queryByText(/Hello world/i)
   expect(buttonElement).not.toBeNull()
 })

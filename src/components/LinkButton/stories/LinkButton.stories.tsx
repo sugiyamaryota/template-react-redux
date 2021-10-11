@@ -24,4 +24,4 @@ export default {
   ],
 } as Meta
 
-export const Primary = () => <LinkButton page={'/'}>test</LinkButton>
+export const Primary = () => <LinkButton page={'/'}>hello</LinkButton>
