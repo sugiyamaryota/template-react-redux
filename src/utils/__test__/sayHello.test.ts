@@ -1,6 +1,6 @@
-import { sayHello } from "../sayHello";
+import { sayHello } from '../sayHello'
 
 test('sayHello testing', () => {
-    const response: string = sayHello('world')
-    expect(response).toBe('Helloworld')
+  const response: string = sayHello('world')
+  expect(response).toBe('Helloworld')
 })
