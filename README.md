@@ -205,3 +205,10 @@ parsing error parseroptions.project has been set for @typescript-eslint/parser
 
 https://www.jacobparis.com/blog/bug-parser-options
 https://chaika.hatenablog.com/entry/2020/04/13/130000
+
+## Local SSL
+
+key と crt の作成は下記になります。
+https://zenn.dev/asano/articles/f267b22f5c238b
+ただし、まだ成功していません。システムルートでないといけない？
+システムやログインではキーチェーンの紐付けに成功しましたが、うまく動作していないです。
