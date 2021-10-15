@@ -30,6 +30,10 @@
     "noEmit": true,
     "noFallthroughCasesInSwitch": true
   },
+  "typedocOptions": {
+    "entryPoints": ["src/App/index.tsx"],
+    "out": "docs"
+  },
   "include": [
     "./babel.config.js",
     "./jest.config.js",
