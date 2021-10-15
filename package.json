@@ -15,7 +15,7 @@
     "test": "jest",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
-    "typedoc": "npx typedoc --out docs"
+    "typedoc": "npx typedoc --options ./typedoc.json"
   },
   "dependencies": {
     "@babel/core": "^7.15.0",
