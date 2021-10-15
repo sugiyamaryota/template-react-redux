@@ -1,0 +1,144 @@
+<!DOCTYPE html><html class="default no-js"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>react-redux</title><meta name="description" content="Documentation for react-redux"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/style.css"/><link rel="stylesheet" href="assets/highlight.css"/><script async src="assets/search.js" id="search-script"></script></head><body><header><div class="tsd-page-toolbar"><div class="container"><div class="table-wrap"><div class="table-cell" id="tsd-search" data-base="."><div class="field"><label for="tsd-search-field" class="tsd-widget search no-caption">Search</label><input type="text" id="tsd-search-field"/></div><ul class="results"><li class="state loading">Preparing search index...</li><li class="state failure">The search index is not available</li></ul><a href="index.html" class="title">react-redux</a></div><div class="table-cell" id="tsd-widgets"><div id="tsd-filter"><a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a><div class="tsd-filter-group"><div class="tsd-select" id="tsd-filter-visibility"><span class="tsd-select-label">All</span><ul class="tsd-select-list"><li data-value="public">Public</li><li data-value="protected">Public/Protected</li><li data-value="private" class="selected">All</li></ul></div> <input type="checkbox" id="tsd-filter-inherited" checked/><label class="tsd-widget" for="tsd-filter-inherited">Inherited</label><input type="checkbox" id="tsd-filter-externals" checked/><label class="tsd-widget" for="tsd-filter-externals">Externals</label></div></div><a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a></div></div></div></div><div class="tsd-page-title"><div class="container"><h1> react-redux</h1></div></div></header><div class="container container-main"><div class="row"><div class="col-8 col-content"><div class="tsd-panel tsd-typography">
+<a href="#overview" id="overview" style="color: inherit; text-decoration: none;">
+  <h1>Overview</h1>
+</a>
+<p>Redux を使用したテンプレートを作成しています。</p>
+
+<a href="#environment" id="environment" style="color: inherit; text-decoration: none;">
+  <h1>Environment</h1>
+</a>
+
+<a href="#node-version" id="node-version" style="color: inherit; text-decoration: none;">
+  <h2>node version</h2>
+</a>
+<p>以下の node のバージョンで開発しています。</p>
+<pre><code><span class="hl-0">v12</span><span class="hl-1">.</span><span class="hl-2">13.0</span>
+</code></pre>
+
+<a href="#package" id="package" style="color: inherit; text-decoration: none;">
+  <h1>Package</h1>
+</a>
+<p>webpack5 系を使用した場合、dotenv で error が出るようなので、4 系を使用しています。</p>
+
+<a href="#dependencies" id="dependencies" style="color: inherit; text-decoration: none;">
+  <h2>dependencies</h2>
+</a>
+<pre><code class="language-shell"><span class="hl-3"># webpack</span><br/><span class="hl-1">yarn add webpack webpack-cli webpack-dev-server</span><br/><br/><span class="hl-3"># webpack/loader</span><br/><span class="hl-1">yarn add html-webpack-plugin fork-ts-checker-webpack-plugin babel-loader style-loader css-loader svg-url-loader url-loader source-map-loader</span><br/><br/><span class="hl-3"># webpack/env</span><br/><span class="hl-1">yarn add dotenv dotenv-expand</span><br/><br/><span class="hl-3"># webpack/babel・typescript</span><br/><span class="hl-1">yarn add @babel/core @babel/plugin-external-helpers @babel/preset-env @babel/preset-react @babel/preset-typescript @typescript-eslint/eslint-plugin @typescript-eslint/parser</span><br/><br/><span class="hl-3"># react</span><br/><span class="hl-1">yarn add react react-dom react-scripts react-router-dom connected-react-router redux @reduxjs/toolkit</span><br/><br/><span class="hl-3"># typescript</span><br/><span class="hl-1">yarn add typescript @types/react @types/react-dom @types/react-router-dom @types/react-redux @types/node</span><br/><br/><span class="hl-3"># history</span><br/><span class="hl-1">yarn add </span><span class="hl-4">history</span><br/><br/><span class="hl-3"># prettier</span><br/><span class="hl-1">yarn add prettier eslint-plugin-prettier</span>
+</code></pre>
+
+<a href="#devdependencies" id="devdependencies" style="color: inherit; text-decoration: none;">
+  <h2>devDependencies</h2>
+</a>
+<pre><code class="language-shell"><span class="hl-3"># webpack</span><br/><span class="hl-1">yarn add -D webpack-merge</span><br/><br/><span class="hl-3"># react-refresh</span><br/><span class="hl-1">yarn add -D react-refresh @pmmmwh/react-refresh-webpack-plugin</span><br/><br/><span class="hl-3"># jest</span><br/><span class="hl-1">yarn add -D jest ts-jest react-test-renderer @types/jest @types/react-test-renderer babel-jest</span><br/><br/><span class="hl-3"># huskyrc・lint-staged</span><br/><span class="hl-1">yarn add -D husky lint-stage</span>
+</code></pre>
+
+<a href="#issue" id="issue" style="color: inherit; text-decoration: none;">
+  <h1>Issue</h1>
+</a>
+
+<a href="#react-refresh-について" id="react-refresh-について" style="color: inherit; text-decoration: none;">
+  <h2>react-refresh について</h2>
+</a>
+<p><code>react-hot-loader</code>から<code>react-refresh</code>への移行について、下記に記載があります。
+<a href="https://github.com/pmmmwh/react-refresh-webpack-plugin/blob/main/docs/TROUBLESHOOTING.md#coming-from-react-hot-loader">https://github.com/pmmmwh/react-refresh-webpack-plugin/blob/main/docs/TROUBLESHOOTING.md#coming-from-react-hot-loader</a></p>
+<pre><code><span class="hl-0">yarn</span><span class="hl-1"> </span><span class="hl-0">add</span><span class="hl-1"> </span><span class="hl-0">react</span><span class="hl-1">-</span><span class="hl-0">refresh</span><br/><span class="hl-0">yarn</span><span class="hl-1"> </span><span class="hl-0">add</span><span class="hl-1"> @</span><span class="hl-0">babel</span><span class="hl-1">/</span><span class="hl-0">core</span><span class="hl-1"> </span><span class="hl-0">babel</span><span class="hl-1">-</span><span class="hl-0">loader</span><span class="hl-1"> @</span><span class="hl-0">pmmmwh</span><span class="hl-1">/</span><span class="hl-0">react</span><span class="hl-1">-</span><span class="hl-0">refresh</span><span class="hl-1">-</span><span class="hl-0">webpack</span><span class="hl-1">-</span><span class="hl-0">plugin</span><span class="hl-1"> -</span><span class="hl-5">D</span><br/><span class="hl-0">yarn</span><span class="hl-1"> </span><span class="hl-0">remove</span><span class="hl-1"> </span><span class="hl-0">react</span><span class="hl-1">-</span><span class="hl-0">hot</span><span class="hl-1">-</span><span class="hl-0">loader</span><span class="hl-1"> @</span><span class="hl-0">hot</span><span class="hl-1">-</span><span class="hl-0">loader</span><span class="hl-1">/</span><span class="hl-0">react</span><span class="hl-1">-</span><span class="hl-0">dom</span>
+</code></pre>
+<p>以下のエラーが発生しました。webpack の devserver の設定で、hot プロパティを true にすると解決しました。
+<a href="https://github.com/pmmmwh/react-refresh-webpack-plugin/issues/169#issuecomment-672240627">https://github.com/pmmmwh/react-refresh-webpack-plugin/issues/169#issuecomment-672240627</a></p>
+<pre><code><span class="hl-1">[</span><span class="hl-0">ReactRefreshPlugin</span><span class="hl-1">] </span><span class="hl-0">Hot</span><span class="hl-1"> </span><span class="hl-0">Module</span><span class="hl-1"> </span><span class="hl-4">Replacement</span><span class="hl-1"> (</span><span class="hl-5">HMR</span><span class="hl-1">) </span><span class="hl-0">is</span><span class="hl-1"> </span><span class="hl-0">not</span><span class="hl-1"> </span><span class="hl-0">enabled</span><span class="hl-1">! </span><span class="hl-0">React</span><span class="hl-1"> </span><span class="hl-0">Refresh</span><span class="hl-1"> </span><span class="hl-0">requires</span><span class="hl-1"> </span><span class="hl-5">HMR</span><span class="hl-1"> </span><span class="hl-0">to</span><span class="hl-1"> </span><span class="hl-6">function</span><span class="hl-1"> </span><span class="hl-4">properly</span><span class="hl-1">.</span>
+</code></pre>
+
+<a href="#dotenv-webpack-の問題について" id="dotenv-webpack-の問題について" style="color: inherit; text-decoration: none;">
+  <h2>dotenv-webpack の問題について</h2>
+</a>
+<p><a href="https://github.com/mrsteele/dotenv-webpack/issues/377">https://github.com/mrsteele/dotenv-webpack/issues/377</a></p>
+<p>webpack の構成を以下で検討</p>
+<p><a href="https://webpack.js.org/guides/production/">https://webpack.js.org/guides/production/</a></p>
+
+<a href="#typescript-について" id="typescript-について" style="color: inherit; text-decoration: none;">
+  <h2>TypeScript について</h2>
+</a>
+<p>以下のエラーが発生しました。</p>
+<pre><code><span class="hl-0">Property</span><span class="hl-1"> </span><span class="hl-7">&#39;userInfo&#39;</span><span class="hl-1"> </span><span class="hl-0">does</span><span class="hl-1"> </span><span class="hl-0">not</span><span class="hl-1"> </span><span class="hl-0">exist</span><span class="hl-1"> </span><span class="hl-0">on</span><span class="hl-1"> </span><span class="hl-0">type</span><span class="hl-1"> </span><span class="hl-7">&#39;IntrinsicAttribute</span><span class="hl-8">s</span><br/><span class="hl-1">...</span><br/><span class="hl-0">Prop</span><span class="hl-1"> </span><span class="hl-0">does</span><span class="hl-1"> </span><span class="hl-0">not</span><span class="hl-1"> </span><span class="hl-0">exist</span><span class="hl-1"> </span><span class="hl-0">on</span><span class="hl-1"> </span><span class="hl-0">type</span><span class="hl-1"> </span><span class="hl-7">&#39;PropsWithChildren...&#39;</span>
+</code></pre>
+<p>presenter 側で、props を定義した場合、型情報と一致する必要があります。
+例えば、logic 側で定義した state を渡してしまうと、上記のエラーが発生します。
+型で定義した粒度で props も定義する必要があります。</p>
+
+<a href="#history-について" id="history-について" style="color: inherit; text-decoration: none;">
+  <h2>history について</h2>
+</a>
+<p><a href="https://github.com/supasate/connected-react-router/issues/312#issuecomment-647082777">https://github.com/supasate/connected-react-router/issues/312#issuecomment-647082777</a></p>
+
+<a href="#jest-について" id="jest-について" style="color: inherit; text-decoration: none;">
+  <h2>Jest について</h2>
+</a>
+<p>スナップショットテスト(UI テスト)とは。</p>
+<p><a href="https://jestjs.io/ja/docs/tutorial-react#create-react-app%E3%82%92%E4%BD%BF%E3%82%8F%E3%81%AA%E3%81%84%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97">https://jestjs.io/ja/docs/tutorial-react#create-react-app%E3%82%92%E4%BD%BF%E3%82%8F%E3%81%AA%E3%81%84%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97</a></p>
+<p><a href="https://media-massage.net/blog/ts-jest%E3%81%8C%E5%A4%96%E9%83%A8%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%82%92import%E3%81%A7%E3%81%8D%E3%81%AA%E3%81%84%E5%A0%B4%E5%90%88%E3%81%AE%E5%AF%BE%E5%87%A6%E6%96%B9/">https://media-massage.net/blog/ts-jest%E3%81%8C%E5%A4%96%E9%83%A8%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%82%92import%E3%81%A7%E3%81%8D%E3%81%AA%E3%81%84%E5%A0%B4%E5%90%88%E3%81%AE%E5%AF%BE%E5%87%A6%E6%96%B9/</a></p>
+<p>jest.config.js の transform で指定した拡張子がありませんでした。
+そのため、import を使用していた場合にエラーが発生していました。
+テスト用のファイルを ts にしてそのエラーは解決しました。</p>
+<p>test ファイルでは module を import する際、相対パス指定でないと、以下のエラーが出ます。</p>
+<pre><code><span class="hl-0">Cannot</span><span class="hl-1"> </span><span class="hl-0">find</span><span class="hl-1"> </span><span class="hl-6">module</span><span class="hl-1"> </span><span class="hl-7">&#39;hoge&#39;</span><span class="hl-1"> </span><span class="hl-9">from</span><span class="hl-1"> </span><span class="hl-7">&#39;src/__test__/hoge.test.ts&#39;</span>
+</code></pre>
+<p><a href="https://stackoverflow.com/questions/44349403/jest-error-test-suite-failed-to-run-how-to-solve">https://stackoverflow.com/questions/44349403/jest-error-test-suite-failed-to-run-how-to-solve</a></p>
+
+<a href="#storybook" id="storybook" style="color: inherit; text-decoration: none;">
+  <h2>storybook</h2>
+</a>
+<p>storybook の導入を行ったところ、下記に遭遇しました。
+<a href="https://github.com/prettier/eslint-plugin-prettier/issues/253">https://github.com/prettier/eslint-plugin-prettier/issues/253</a></p>
+<p><code>eslint-config-prettier</code>をインストールしたところ、下記に遭遇しました。</p>
+<pre><code><span class="hl-10">Error</span><span class="hl-1">: </span><span class="hl-7">&quot;prettier/@typescript-eslint&quot;</span><span class="hl-1"> </span><span class="hl-0">has</span><span class="hl-1"> </span><span class="hl-0">been</span><span class="hl-1"> </span><span class="hl-0">merged</span><span class="hl-1"> </span><span class="hl-0">into</span><span class="hl-1"> </span><span class="hl-7">&quot;prettier&quot;</span><span class="hl-1"> </span><span class="hl-6">in</span><span class="hl-1"> </span><span class="hl-0">eslint</span><span class="hl-1">-</span><span class="hl-0">config</span><span class="hl-1">-</span><span class="hl-0">prettier</span><span class="hl-1"> </span><span class="hl-2">8.0</span><span class="hl-1">.</span><span class="hl-2">0.</span>
+</code></pre>
+<p><code>eslintrc.json</code>の extends で該当の記述を削除しました。</p>
+<pre><code><span class="hl-0">Definition</span><span class="hl-1"> </span><span class="hl-0">for</span><span class="hl-1"> </span><span class="hl-0">rule</span><span class="hl-1"> </span><span class="hl-7">&#39;import/extensions&#39;</span><span class="hl-1"> </span><span class="hl-0">was</span><span class="hl-1"> </span><span class="hl-0">not</span><span class="hl-1"> </span><span class="hl-0">found</span>
+</code></pre>
+<p><a href="https://stackoverflow.com/questions/68878189/eslint-definition-for-rule-import-extensions-was-not-found">https://stackoverflow.com/questions/68878189/eslint-definition-for-rule-import-extensions-was-not-found</a></p>
+<pre><code><span class="hl-0">Definition</span><span class="hl-1"> </span><span class="hl-0">for</span><span class="hl-1"> </span><span class="hl-0">rule</span><span class="hl-1"> </span><span class="hl-7">&#39;jsx-a11y/label-has-associated-control&#39;</span><span class="hl-1"> </span><span class="hl-0">was</span><span class="hl-1"> </span><span class="hl-0">not</span><span class="hl-1"> </span><span class="hl-0">found</span><span class="hl-1">  </span><span class="hl-0">jsx</span><span class="hl-1">-</span><span class="hl-0">a11y</span><span class="hl-1">/</span><span class="hl-0">label</span><span class="hl-1">-</span><span class="hl-0">has</span><span class="hl-1">-</span><span class="hl-0">associated</span><span class="hl-1">-</span><span class="hl-0">control</span>
+</code></pre>
+<p>router を使用している components を stories に追加すると、以下のエラーが出ました。</p>
+<pre><code><span class="hl-7">&quot;Error: Invariant failed: You should not use &lt;Link&gt; outside a &lt;Router&gt;&quot;</span>
+</code></pre>
+<p><a href="https://github.com/storybookjs/storybook/issues/8892">https://github.com/storybookjs/storybook/issues/8892</a>
+<a href="https://qiita.com/daikiojm/items/da3299d7b90d38194d85">https://qiita.com/daikiojm/items/da3299d7b90d38194d85</a></p>
+<p>storiesOf と CSF の記述の差が分かりませんでした。下記を参考にしました。</p>
+<p><a href="https://awesome-linus.com/2020/03/03/change-storybook-to-csf/">https://awesome-linus.com/2020/03/03/change-storybook-to-csf/</a></p>
+
+<a href="#storybook-と-jest" id="storybook-と-jest" style="color: inherit; text-decoration: none;">
+  <h3>storybook と jest</h3>
+</a>
+<p>リグレッションテスト（Regression Test）とは。
+動作していた機能に不具合が起きていないか確認するためのテスト</p>
+<p>以下のエラーが出ました。mock ファイルの作成と jest.config.js の rootDir から src を除外して、相対パス指定をしなおすと、こちらのエラーは解決しました。
+<a href="https://jestjs.io/docs/webpack">https://jestjs.io/docs/webpack</a>
+<a href="https://github.com/kulshekhar/ts-jest/issues/364#issuecomment-611741215">https://github.com/kulshekhar/ts-jest/issues/364#issuecomment-611741215</a></p>
+<pre><code><span class="hl-10">SyntaxError</span><span class="hl-1">: </span><span class="hl-0">Unexpected</span><span class="hl-1"> </span><span class="hl-0">token</span><span class="hl-1"> </span><span class="hl-7">&#39;.&#39;</span>
+</code></pre>
+<p><a href="https://jestjs.io/docs/configuration#testenvironment-string">https://jestjs.io/docs/configuration#testenvironment-string</a></p>
+<p>下記エラーが出ました。jsdom の環境で動作させる必要があるので、下記をコメントアウトで追加します。</p>
+<pre><code><span class="hl-0">renders</span><span class="hl-1"> </span><span class="hl-0">primary</span><span class="hl-1"> </span><span class="hl-0">button</span><span class="hl-1"> </span><span class="hl-11">with</span><span class="hl-1"> </span><span class="hl-11">default</span><span class="hl-1"> </span><span class="hl-0">args</span><br/><br/><span class="hl-0">The</span><span class="hl-1"> </span><span class="hl-0">error</span><span class="hl-1"> </span><span class="hl-0">below</span><span class="hl-1"> </span><span class="hl-0">may</span><span class="hl-1"> </span><span class="hl-0">be</span><span class="hl-1"> </span><span class="hl-0">caused</span><span class="hl-1"> </span><span class="hl-0">by</span><span class="hl-1"> </span><span class="hl-0">using</span><span class="hl-1"> </span><span class="hl-0">the</span><span class="hl-1"> </span><span class="hl-0">wrong</span><span class="hl-1"> </span><span class="hl-0">test</span><span class="hl-1"> </span><span class="hl-0">environment</span><span class="hl-1">, </span><span class="hl-0">see</span><span class="hl-1"> </span><span class="hl-10">https</span><span class="hl-1">:</span><span class="hl-3">//jestjs.io/docs/configuration#testenvironment-string.</span><br/><span class="hl-0">Consider</span><span class="hl-1"> </span><span class="hl-0">using</span><span class="hl-1"> </span><span class="hl-0">the</span><span class="hl-1"> </span><span class="hl-7">&quot;jsdom&quot;</span><span class="hl-1"> </span><span class="hl-0">test</span><span class="hl-1"> </span><span class="hl-0">environment</span><span class="hl-1">.</span>
+</code></pre>
+<pre><code><span class="hl-3">/**</span><br/><span class="hl-3"> * @jest-environment jsdom</span><br/><span class="hl-3"> */</span>
+</code></pre>
+<p>以下と同じ事象が発生しました。
+<a href="https://javabayashi.hatenablog.com/entry/2020/07/07/170615">https://javabayashi.hatenablog.com/entry/2020/07/07/170615</a></p>
+
+<a href="#babelconfigjs" id="babelconfigjs" style="color: inherit; text-decoration: none;">
+  <h2>babel.config.js</h2>
+</a>
+<p>以下のエラーが起きていました。tsconfig の incluede に該当のパスを追加と、.eslintrc の env に node を設定したところ、解決しました。</p>
+<pre><code><span class="hl-0">parsing</span><span class="hl-1"> </span><span class="hl-0">error</span><span class="hl-1"> </span><span class="hl-0">parseroptions</span><span class="hl-1">.</span><span class="hl-0">project</span><span class="hl-1"> </span><span class="hl-0">has</span><span class="hl-1"> </span><span class="hl-0">been</span><span class="hl-1"> </span><span class="hl-0">set</span><span class="hl-1"> </span><span class="hl-0">for</span><span class="hl-1"> @</span><span class="hl-0">typescript</span><span class="hl-1">-</span><span class="hl-0">eslint</span><span class="hl-1">/</span><span class="hl-0">parser</span>
+</code></pre>
+<p><a href="https://www.jacobparis.com/blog/bug-parser-options">https://www.jacobparis.com/blog/bug-parser-options</a>
+<a href="https://chaika.hatenablog.com/entry/2020/04/13/130000">https://chaika.hatenablog.com/entry/2020/04/13/130000</a></p>
+
+<a href="#local-ssl" id="local-ssl" style="color: inherit; text-decoration: none;">
+  <h2>Local SSL</h2>
+</a>
+<p>key と crt の作成は下記になります。
+<a href="https://zenn.dev/asano/articles/f267b22f5c238b">https://zenn.dev/asano/articles/f267b22f5c238b</a>
+ただし、まだ成功していません。システムルートでないといけない？
+システムやログインではキーチェーンの紐付けに成功しましたが、うまく動作していないです。</p>
+</div></div><div class="col-4 col-menu menu-sticky-wrap menu-highlight"><nav class="tsd-navigation primary"><ul><li class="current"><a href="modules.html">Exports</a></li></ul></nav><nav class="tsd-navigation secondary menu-sticky"><ul></ul></nav></div></div></div><footer class="with-border-bottom"><div class="container"><h2>Settings</h2><p>Theme <select id="theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></p></div></footer><div class="container tsd-generator"><p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></div><div class="overlay"></div><script src="assets/main.js"></script></body></html>
