@@ -1,0 +1,12 @@
+{
+    "entryPointStrategy": "Expand",
+    "entryPoints": [
+        "./src"
+    ],
+    "exclude": [
+        "./src/__mocks__/*",
+        "./src/__test__/*",
+        "./src/stories/*"
+    ],
+    "out": "docs"
+}
