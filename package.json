@@ -6,8 +6,8 @@
   "author": "",
   "main": "webpack.config.js",
   "engines": {
-    "node": "12.13.0",
-    "npm": "6.12.0"
+    "node": ">= 12.13.0",
+    "npm": ">= 6.12.0"
   },
   "scripts": {
     "start": "webpack-dev-server --config webpack.dev.js",

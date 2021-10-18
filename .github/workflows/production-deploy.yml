@@ -1,0 +1,16 @@
+name: production deploy
+on:
+  push:
+    branches:
+      - 'master'
+jobs:
+  deploy:
+    name: Build & Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+        run: |
+          yarn build-storybook
+          yarn typedoc
