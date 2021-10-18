@@ -8,5 +8,5 @@
         "./src/__test__/*",
         "./src/stories/*"
     ],
-    "out": "docs"
+    "out": "docs/typedoc"
 }
