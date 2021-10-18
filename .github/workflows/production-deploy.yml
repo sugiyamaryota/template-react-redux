@@ -8,9 +8,15 @@ jobs:
     name: Build & Deploy
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/setup-node@v2
+      - name: setup node.js
+        uses: actions/setup-node@v2
         with:
           node-version: '14'
-      - run: |
+      - name: install yarn
+        run: |
+          npm install yarn
+          yarn install
+      - name: build
+        run: |
           yarn build-storybook
           yarn typedoc
