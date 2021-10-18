@@ -13,5 +13,4 @@ module.exports = {
     '\\.(css|less)$': '<rootDir>/src/__mocks__/styleMock.js',
   },
   preset: 'ts-jest',
-  //setupFilesAfterEnv: ['./jest.setup.ts'],
 }
